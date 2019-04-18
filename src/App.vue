@@ -1,60 +1,84 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+
+
+    <h2> {{msg}}</h2>
+    <br>
+    <a>
+      {{obj.name}}
+    </a>
+    <br>
+    <a>
+      <span v-for="item in list">
+        {{item}}
+        <div v-text="msg">
+
+
+        </div>
+      </span>
+    </a>
+
+    <br>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li v-for="item in newsList">
+        {{item.cate}}
+        <ol>
+          <li v-for="news in item.list">
+            {{news.title}}
+          </li>
+
+        </ol>
+      </li>
+
     </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+
+    <div v-bind:title="title">
+绑定属性title
+
+      <!--去除v-bind 绑定动态属性-->
+
+      <br>
+    </div>
+
+    <div v-html="html">
+
+
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
-  data () {
+  data () {/*业务逻辑里面定义的数据*/
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      obj:{/*传入对象*/
+        name:"richy's blog"
+      },
+      list:['hello','我是','richy'],
+      newsList:[/*嵌套数组*/
+        {
+          "cate":"国内新闻",
+          "list":[
+            {'title':'中国歌剧'},
+            {'title':'中国篮球'}
+          ]
+        },
+        {
+          "cate":"国际新闻",
+          "list":[
+            {'title':'国际歌剧'},
+            {'title':'国际篮球'}
+          ]
+        }
+      ],
+      title:"绑定title",
+      html:"绑定html"
     }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
