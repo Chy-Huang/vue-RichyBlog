@@ -36,7 +36,6 @@
 绑定属性title
 
       <!--去除v-bind 绑定动态属性-->
-
       <br>
     </div>
 
@@ -45,6 +44,50 @@
 
     </div>
   </div>
+
+
+<!--
+
+<template>
+  <section>
+    <mu-tabs value="导航栏" class="tab">
+      <mu-tab icon="adb" iconClass="iconClass" title="shsmart" titleClass="tab-title" value="shsmart" href="/index">
+      </mu-tab>
+      <mu-tab title="首页" value="homePage" href="/index">
+      </mu-tab>
+      <mu-tab title="技术博文" href="/">
+      </mu-tab>
+      <mu-tab title="资源链接" value="资源链接" href="/">
+      </mu-tab>
+      <mu-tab title="关于我" titleClass="aboutMe" value="about-me" href="/" :disabled="true">
+      </mu-tab>
+      <mu-tab title="留言板" href="/">
+      </mu-tab>
+    </mu-tabs>
+    <mu-row :gutter="true" class="body">
+      <mu-col width="20" tablet="20" desktop="20">
+        &nbsp;
+      </mu-col>
+      <mu-col width="60" tablet="60" desktop="60">
+        <mu-card>
+          <mu-card-media title="This is me!">
+            <img src="./static/img_default.JPG" height="200px" />
+          </mu-card-media>
+          <mu-card-title title="项目简介" titleClass="title" subTitle="作者" subTitleClass="subTile" class="main" />
+          <mu-card-text>
+            正文
+          </mu-card-text>
+        </mu-card>
+      </mu-col>
+      <mu-col width="20" tablet="20" desktop="20">
+        &nbsp;
+      </mu-col>
+    </mu-row>
+  </section>
+</template>
+
+-->
+
 </template>
 
 <script>
